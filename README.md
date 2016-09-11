@@ -1,5 +1,18 @@
 # node-soap-java
 
+### create SpringBoot Project 
+[Spring Boot](https://start.spring.io/) initializr is good starting point for project setup
+
+### import WSDL to project 
+```bash
+cd <project/src/main/java>
+wsimport -extension -keep http://www.gcomputer.net/webservices/dilbert.asmx?WSDL
+```
+
+### Write Endpoints from imported WSDL
+find all supported endpoints from WSDL document
+this has to be done manually
+
 ### start java soap server
 * `./mvnw install`
 * `./mvnw spring-boot:run`
