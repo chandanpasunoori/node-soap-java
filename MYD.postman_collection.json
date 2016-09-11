@@ -1,0 +1,85 @@
+{
+	"variables": [],
+	"info": {
+		"name": "MYD",
+		"_postman_id": "bfc885dc-61de-399f-d648-6d5387cb8f33",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://www.gcomputer.net/webservices/dilbert.asmx",
+			"request": {
+				"url": "http://www.gcomputer.net/webservices/dilbert.asmx",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "text/xml",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<soap12:Envelope xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:soap12=\"http://www.w3.org/2003/05/soap-envelope\">\n  <soap12:Body>\n    <DailyDilbert xmlns=\"http://gcomputer.net/webservices/\">\n      <ADate>2015-04-06-04:00</ADate>\n    </DailyDilbert>\n  </soap12:Body>\n</soap12:Envelope>"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/daily",
+			"request": {
+				"url": "http://localhost:8080/daily",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"adate\":1473631656137}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/today",
+			"request": {
+				"url": "http://localhost:8080/today",
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://www.gcomputer.net/webservices/dilbert.asmx",
+			"request": {
+				"url": "http://www.gcomputer.net/webservices/dilbert.asmx",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "text/xml",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<soap12:Envelope xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:soap12=\"http://www.w3.org/2003/05/soap-envelope\">\n  <soap12:Body>\n    <TodaysDilbert xmlns=\"http://gcomputer.net/webservices/\" />\n  </soap12:Body>\n</soap12:Envelope>"
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
